@@ -1,0 +1,76 @@
+Git is a version control system that helps developers track changes in their code and work together
+GitHub is a website where u can store ur Git projects online and collaborate with others
+
+Git Commands:
+1. git clone [URL] => clones a remote repo to ur local machine using HTTPS or SSH
+2. git status => shows the current status of ur working dir and staging area
+3. git add [file-name] => adds a file to the staging area. use * or . to add all files
+4. git reset head [file-name] => removes a file from the staging area. use * or . to remove all files
+5. git commit -m "[message]" => saves staged changes to ur local repo with a message
+6. git branch => shows all branches in ur local repo
+7. git branch -r => shows all branches in ur remote repo
+8. git rmeote -v => shows all remote repo with their URLs
+9. git push [remote-name] [branch-name] => uploads ur local branch changes to the remote repo
+10. git pull [remote-name] [branch-name] => fetches changes from the remote branch and merges them into ur local branch
+11. git config [--list or -l] => shows ur Git configuration settings (not everything, just the configs)
+12. git help config => opens the manual page for the config command
+13. git config --global [config-name] "[value]" => sets a global Git configuration (applies to all repos for ur user)
+14. git config -l --show-origin => list all Git config settings along with the file they come from
+15. git config --global --unset [config-name] => removes a global configuration settings
+16. git config --global --edit => opens the global Git config file in a text editor foro manual editing
+17. ssh-keygen -t rsa -b 4096 -c "[email]" => generates a 4096-bit RSA SSH key with a comment (usually ur email)
+18. cat ~/[path] => displays the content of the specified file in ur home dir
+19. ssh -T git@github.com => test ur SSH connection to GitHub
+20. git init => initializes a new, empty Git repo in the current dir
+21. git branch -m [branch-name] => renames the current branch to [branch-name]
+22. git remote add origin git@github.com:[username]/[repo-name] => adds a remote repo named origin using SSH URL
+23. git config --global alias.[new-alias] "[command]" => creates a global Git alias for a command
+24. git config --global --get-regexp alias => shows all global Git aliases you have sets
+25. git config --global --unset alias.[alias-name] => rmeoves a global Git alias
+26. git branch [branch-name] => creates a new branch with the given name
+27. git checkout [branch-name] switches to the specified branch
+28. git branch -d [branch-name] => delete the branch only if it has been fully merged (no unmerged changes)
+29. git branch -D [branch-name] => forces deletion of t he branch, even if it has unmerged changes
+30. git checkout -b [branch-name] => creates a new branch and switches to it immediately
+31. git merge [branch-name] => merges the specified branch into the current branch
+32. git stash => saves (stashes) all ur local changes (tracked files) temporarily and cleans the working dir
+33. git stash pop => applies the last stashed changes back to ur working dir and rmeoves it from the stash stack
+34. git stash list => show all stashed changes saved in the stash stack
+35. git stash save "[message]" => saves ur changes to the stash with a custom message
+36. git stash apply => applies the last stashed changes to ur working dir but keeps them in the stash
+37. git stash pop stash@{[number]} => applies a specific stash entry by number and removes it from the stash list
+38. git stash drop => removes the latest stash entry
+39. git stash drop stash@{[number]} => removes a specific stash entry by its reference
+40. git stash show => shows a summary of changes in the latest stash
+41. git stash show stash@{[number]} => shows a summary of changes in a specific stash
+42. git stash clear => removes all stash entries (clears the stash lsit)
+43. git restore --staged [file-name] => removes a specific file from the staging area, but keeps changes in the working dir
+44. git clean -n => shows all untracked files and directories that would be removed
+45. git clean -f => forcefully rmeoves all untracked files and directories
+46. git log => displays the commit history with commit hashes, messages, authors, and dates
+47. git reset --hard [commit-hash] => resets to a specific commit, discars all changes after it
+48. git reset --soft [commit-hash] => resets to specific commit but keeps all changes in the staging area
+49. git push [remote-name] [branch-name] --force => force-pusheds ur local branch to the remote, overwriting its history
+50. touch .gitignore => creates a .gitignore file to specify files/folders Git should ignore
+51. code .gitignore => opens the .gitignore file in VS code to edit and list ignored files
+52. git add -f [file-name] => force-adds a file to the staging area even if it's listed in .gitignore
+53. git tag [tag-name] => creates a new lightweight tag pointing to the latest commit
+54. git push origin [tag-name] => pushed the specified tag to the remote repo
+55. git tag => lists all tags in the repo
+56. git tag -a [tag-name] -m "[message]" => creates an annotated tag with a message
+57. git tag -l "v1.*" => lists all tag that match the pattern "v1.*" (e.g, v1.0, v1.1, etc)
+58. git tag -d [tag-name] deletes a tag locally
+59 git push origin --delete [tag-name] => deletes a tag from the remote repo
+60. git cherry-pick [commit-hash] => Applies a specific commit from another branch into the current branch
+61. git cherry-pick -x [commit-hash] => add a line in the commit message like "cherry picked from commit [hash]"
+	useful to track where the commit originally came from
+62. git cherry-pick -e [commit-hash] => opens the editor so u can edit the commit message before applying the cherry-pick
+
+git fork:
+fork is used by an external user who is not part of the project to add a new feature. 
+after finishing, they create a pull request for the project owner to review and accept. 
+the contributor’s name appears in the project history.
+
+fork vs clone:
+fork => copies the repo to ur GitHub account. used when u don't have access to the original repo
+clone => copies the repo from GitHub to ur local machine. used to work on the code locally
