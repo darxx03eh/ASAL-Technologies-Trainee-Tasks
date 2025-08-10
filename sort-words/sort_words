@@ -1,0 +1,4 @@
+my_name = ['mahmoud', 'atef', 'mohammed', 'darawsheh']
+print(f"before sort: {my_name}")
+my_name.sort()
+print(f"after sort: {my_name}")
